@@ -1,0 +1,25 @@
+module(
+    name = "linux-userspace-lua",
+    version = "0.0.1",
+)
+
+bazel_dep(name = "platforms", version = "1.0.0")
+bazel_dep(name = "glua_kit", version = "0.0.1")
+bazel_dep(name = "rules_cc", version = "0.1.1")
+
+# TODO: to be eventually removed
+# The glua_kit module is not yet tracked in the Bazel registry, so we manually point to the Github repo.
+# Otherwise, this shouldn't exist.
+git_override(
+    module_name = "glua_kit",
+    commit = "74bcf87b47b69fb758ceebd5f39167a3530649c2",
+    remote = "https://github.com/popovicu/glua-kit",
+)
+
+glua = use_extension("@glua_kit//:extension.bzl", "glua")
+use_repo(
+    glua,
+    "lua_mainline",
+)
+
+register_toolchains("//toolchain:musl_linux_x86_64")
